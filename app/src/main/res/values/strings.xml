@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">HelloFrog</string>
     <string name="app_header">Hello Frog!</string>
-    <string name="hello_frog">Hello Frog :-)</string>
-    <string name="hello_toad">Hello Toad :-)</string>
+    <string name="hello_frog"></string>
+    <string name="hello_toad"></string>
     <string name="label_name">Name</string>
     <string name="label_species">Species</string>
     <string name="submit_button">Submit</string>

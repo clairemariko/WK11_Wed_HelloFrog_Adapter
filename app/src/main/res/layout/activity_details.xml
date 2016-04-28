@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#66cdaa">
 
     <TextView
-        android:textSize="20dp"
+        android:textSize="30dp"
         android:textColor="#e7e0e0"
         android:layout_marginTop="20dp"
         android:id="@+id/text_name"
@@ -13,19 +14,20 @@
         android:text="@string/hello_frog"/>
 
     <TextView
-        android:textSize="20dp"
+        android:textSize="30dp"
         android:textColor="#e7e0e0"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="25dp"
         android:id="@+id/text_species"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/hello_toad"/>
 
     <TextView
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/text_media"
-        android:textSize="20dp"
+        android:textSize="30dp"
         android:textColor="#e7e0e0"
         android:text="No Media"/>
 
@@ -33,7 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/text_legs"
-        android:textSize="20dp"
+        android:textSize="30dp"
         android:textColor="#e7e0e0"
         android:text="Some frenchy ate my legs"/>
 
@@ -47,10 +49,12 @@
 
     <ImageView
 
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+
+        android:layout_width="160dp"
+        android:layout_height="160dp"
         android:id="@+id/img_detail"
-        android:layout_marginLeft="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="75dp"
         android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
         android:scaleType="centerInside"/>
