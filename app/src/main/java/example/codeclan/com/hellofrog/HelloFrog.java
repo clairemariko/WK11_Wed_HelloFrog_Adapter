@@ -10,7 +10,6 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
@@ -28,6 +27,8 @@ HelloFrog extends AppCompatActivity {
 
     private static final String API_URL = "http://cc-amphibian-api.herokuapp.com/";
 
+    private static final int REQUEST_CODE_FAVOURITES = 0;
+
     EditText mNameEditText;
     EditText mSpeciesEditText;
     Button mSubmitButton;
@@ -36,14 +37,20 @@ HelloFrog extends AppCompatActivity {
     //need to have an instance of our json class
     JSONAdapter mJSONAdapter;
 
+    AmphibianList mFavourties;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Log.d("HelloFrog:", "onCreate called");
         super.onCreate(savedInstanceState);
 
+        mFavourties = new AmphibianList();
+
         setContentView(R.layout.activity_main);
 
         queryAmphibians();
+
+
 
         mNameEditText = (EditText) findViewById(R.id.name_input);
         mSpeciesEditText = (EditText) findViewById(R.id.species_input);
@@ -67,7 +74,9 @@ HelloFrog extends AppCompatActivity {
                 intent.putExtra("species", jsonObject.optString("species"));
                 intent.putExtra("legs", jsonObject.optString("numberOfLegs"));
                 intent.putExtra("url", jsonObject.optString("imageUrl"));
-                startActivity(intent);
+                intent.putExtra("favourites", mFavourties.getList());
+
+                startActivityForResult(intent, REQUEST_CODE_FAVOURITES);
             }
         });
 
@@ -92,7 +101,7 @@ HelloFrog extends AppCompatActivity {
                 JSONArray data = jsonObject.optJSONArray("Amphibians");
                 if (data != null){
 
-                    mJSONAdapter.updateData(data);
+                    mJSONAdapter.updateData(data, mFavourties);
 
                 }else{
                     Log.e("HelloFrog: ", "no data found");
@@ -105,4 +114,23 @@ HelloFrog extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data){
+        if (resultCode != RESULT_OK){
+            return;
+        }
+
+        if (requestCode == REQUEST_CODE_FAVOURITES){
+            if (data == null) {
+                 return;
+            }
+
+                mFavourties = AmphibianDetails.getFavourites(data);
+        }
+            queryAmphibians();
+
+    }
+
+
 }

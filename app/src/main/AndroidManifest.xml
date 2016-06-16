@@ -22,8 +22,11 @@
         <activity
             android:name="example.codeclan.com.hellofrog.AmphibianDetails"
             android:label="@string/activity_details"
-            android:parentActivityName="example.codeclan.com.hellofrog.HelloFrog">
+            >
         </activity>
+
+        //this is for the back arrow from your next activity
+        <!--android:parentActivityName="example.codeclan.com.hellofrog.HelloFrog"-->
 
     </application>
 

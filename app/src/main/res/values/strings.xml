@@ -6,6 +6,7 @@
     <string name="label_name">Name</string>
     <string name="label_species">Species</string>
     <string name="submit_button">Submit</string>
+    <string name="add_favourtie_button">Add To Favourites</string>
 
     <string name="activity_details">Amphibian Details</string>
 </resources>

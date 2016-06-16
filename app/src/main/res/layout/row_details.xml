@@ -41,6 +41,15 @@
         android:layout_marginTop="15dp"
         android:layout_below="@id/row_text_name"/>
 
+    <ImageView
+        android:id="@+id/image_favourited"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@android:drawable/star_big_on"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="#66cdaa"/>
+
 
 
 </RelativeLayout>
